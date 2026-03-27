@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
     int punktyLiczba = 0;
     private CountDownTimer countDownTimer;
     GridLayout grid;
-    View[] japka;
+    ImageView[] japka;
     int random;
+    int rodzajJapka;
     int zycieJapka;
+    int zycieZlegoJapka = 0;
     TextView koniec;
     LinearLayout czasLayout;
 
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         grid = findViewById(R.id.grid);
         koniec = findViewById(R.id.koniec);
         czasLayout = findViewById(R.id.czasLayout);
-        japka = new View[] {
+        japka = new ImageView[] {
                 findViewById(R.id.j1),
                 findViewById(R.id.j2),
                 findViewById(R.id.j3),
@@ -63,15 +65,32 @@ public class MainActivity extends AppCompatActivity {
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            punktyLiczba++;
-                            punkty.setText(String.valueOf(punktyLiczba));
-                            for (int i = 0; i < japka.length; i++)
-                            {
-                                japka[i].setVisibility(View.INVISIBLE);
+                            if (zycieZlegoJapka > 0) {
+                                japka[random].setVisibility(View.INVISIBLE);
+                                start.setVisibility(View.VISIBLE);
+                                countDownTimer.cancel();
+                                grid.setVisibility(View.GONE);
+                                koniec.setVisibility(View.VISIBLE);
+                                czasLayout.setVisibility(View.INVISIBLE);
+                                punktyLiczba = 0;
+                            } else {
+                                punktyLiczba++;
+                                punkty.setText(String.valueOf(punktyLiczba));
+                                for (int i = 0; i < japka.length; i++) {
+                                    japka[i].setVisibility(View.INVISIBLE);
+                                }
+                                random = new Random().nextInt(9);
+                                rodzajJapka = new Random().nextInt(10) + 1;
+                                if (rodzajJapka != 1) {
+                                    zycieJapka = 0;
+                                    japka[random].setImageResource(R.drawable.jabko2);
+                                    zycieZlegoJapka = ileSekund;
+                                } else {
+                                    zycieJapka = ileSekund;
+                                    zycieZlegoJapka = 0;
+                                }
+                                japka[random].setVisibility(View.VISIBLE);
                             }
-                            random = new Random().nextInt(9);
-                            japka[random].setVisibility(View.VISIBLE);
-                            zycieJapka = ileSekund;
                         }
                     }
             );
@@ -106,6 +125,16 @@ public class MainActivity extends AppCompatActivity {
                                     koniec.setVisibility(View.VISIBLE);
                                     czasLayout.setVisibility(View.INVISIBLE);
                                     punktyLiczba = 0;
+                                }
+                                if(zycieZlegoJapka >= ileSekund+2){
+                                    for (int i = 0; i < japka.length; i++)
+                                    {
+                                        japka[i].setVisibility(View.INVISIBLE);
+                                    }
+                                    random = new Random().nextInt(9);
+                                    zycieJapka = ileSekund;
+                                    japka[random].setVisibility(View.VISIBLE);
+                                    zycieZlegoJapka = 0;
                                 }
                                 czas.setText(ileSekund+"s");
                             }
