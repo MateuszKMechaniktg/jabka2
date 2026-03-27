@@ -18,6 +18,7 @@
          />
 
     <LinearLayout
+        android:id="@+id/czasLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -53,6 +54,16 @@
             android:textSize="30dp"
             android:text="0"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/koniec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="KONIEC"
+        android:textSize="100dp"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"/>
 
     <GridLayout
         android:id="@+id/grid"
