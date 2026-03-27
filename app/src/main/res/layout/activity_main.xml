@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="30dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:textSize="50dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jabłka"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Czas: "
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/czas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="60s"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Punkty: "
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/punkty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="0"/>
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="390dp"
+        android:layout_height="390dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <ImageView
+            android:id="@+id/j1"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j3"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j5"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/j6"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j7"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j8"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/j9"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/jabko"
+            android:visibility="invisible" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:text="START" />
+
+</LinearLayout>
